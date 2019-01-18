@@ -6,3 +6,5 @@ Some shortcut keys:
 * 's' - Toggle showing the overall fourier shape
 * '+' - Increase the number of fourier terms
 * '-' - Decrease the number of fourier terms
+
+Visualize it at [https://pjpmarques.github.io/fourier/](https://pjpmarques.github.io/fourier/)
