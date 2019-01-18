@@ -1,5 +1,6 @@
 
 let time = 0;
+let delta = 0.02;
 let radius = 0;
 let wave = [];
 let contour = [];
@@ -49,8 +50,8 @@ function draw() {
 
 	stroke(0);
 	fill(255);	
-	let wherePoint = 'p = (' + round(x) + ', ' + round(y) + ')';
-	let angle = 'θ = ' + (Math.atan2(y, x) * 180 / Math.PI + 180).toFixed(0) + ' degrees';
+	let wherePoint = 'p = (' + round(x) + ', ' + round(-y) + ')';
+	let angle = 'θ = ' + (Math.atan2(y, -x) * 180 / Math.PI + 180).toFixed(0) + ' degrees';
 	let nTerms = 'terms = ' + terms;
 	text(wherePoint, -CENTER_X + 15, -CENTER_Y + 15);
 	text(angle, -CENTER_X + 15, -CENTER_Y + 35);
@@ -89,7 +90,7 @@ function draw() {
 		contour.pop();
 	}
 
-	time+= 0.02;
+	time-= delta;
 }
 
 function keyTyped(event) {
@@ -113,5 +114,5 @@ function keyTyped(event) {
 	} else if ((event.key == '+') || (event.key == '=')) {
 		++terms;
 		resetShapes();
-	}
+	} 
 }
